@@ -29,7 +29,7 @@ public class BillImpl implements Bill{
     }
 
     private Float clientsBill (Map<String, Float> individualPartialBill) {
-        Float clientsBill = 0f;
+        Float clientsBill = 0F;
 
         for (String key : individualPartialBill.keySet() ) {
             clientsBill += individualPartialBill.get(key);
@@ -39,16 +39,11 @@ public class BillImpl implements Bill{
     }
 
     private Float fullBill (Map<String, Object> bill, Float clientsBill) {
-        Float fullBill = 0f;
-        Float additionRateValue = 0f;
-        Float discountRateValue = 0f;
+        Float additionRateValue = ((1 + (Float) bill.get(ADDITION_RATE)) * clientsBill) - clientsBill;
+        Float discountRateValue = (Float) bill.get(DISCOUNT_RATE) * clientsBill;
 
-        additionRateValue = ((1 + (Float) bill.get(ADDITION_RATE)) * clientsBill) - clientsBill;
-        discountRateValue = (Float) bill.get(DISCOUNT_RATE) * clientsBill;
-        fullBill = clientsBill + additionRateValue + (Float) bill.get(DELIVERY_FEE) -
+        return clientsBill + additionRateValue + (Float) bill.get(DELIVERY_FEE) -
                 (Float) bill.get(DISCOUNT_COUPON) - discountRateValue;
-
-        return fullBill;
     }
 
     private Map<String, BigDecimal> clientsFinalBill (Map<String, Float> individualPercentages, Float fullBill) {
@@ -76,7 +71,6 @@ public class BillImpl implements Bill{
     }
 
     private Map<String, Float> individualPercentages (Map<String, Float> individualPartialBill, Float fullBill) {
-
         Map<String, Float> individualPercentages = new HashMap<>();
 
         for (String key : individualPartialBill.keySet() ) {
@@ -87,34 +81,36 @@ public class BillImpl implements Bill{
     }
 
     private Map<String, Object> sectionOrderRequest (List<OrderItem> orderItems) {
-
-        Map<String, Object> bill = new HashMap<String, Object>();
-        bill.put(ADDITION_RATE, 0f);
-        bill.put(DELIVERY_FEE, 0f);
-        bill.put(DISCOUNT_COUPON, 0f);
-        bill.put(DISCOUNT_RATE, 0f);
-
+        Map<String, Object> bill = getDefaultOrderRequest();
 
         Map<String, Float> clientsBill = new HashMap<String, Float>();
 
         for (OrderItem orderItem : orderItems) {
 
             OrderItemType orderItemType = orderItem.orderItemType();
-
+            
             if (orderItemType.equals(OrderItemType.ADDITION_RATE)) {
-                bill.put(ADDITION_RATE, orderItem.value());
+                if (orderItem.value() != null) {
+                    bill.put(ADDITION_RATE, orderItem.value());
+                }
             }
 
             if (orderItemType.equals(OrderItemType.DELIVERY_FEE)) {
-                bill.put(DELIVERY_FEE, orderItem.value());
+                if (orderItem.value() != null) {
+                    bill.put(DELIVERY_FEE, orderItem.value());
+                }
             }
 
             if (orderItemType.equals(OrderItemType.DISCOUNT_COUPON)) {
-                bill.put(DISCOUNT_COUPON, orderItem.value());
+                if (orderItem.value() != null) {
+                    bill.put(DISCOUNT_COUPON, orderItem.value());
+                }
             }
 
             if (orderItemType.equals(OrderItemType.DISCOUNT_RATE)) {
-                bill.put(DISCOUNT_RATE, orderItem.value());
+                if (orderItem.value() != null) {
+                    bill.put(DISCOUNT_RATE, orderItem.value());
+                }
             }
 
             if (orderItemType.equals(OrderItemType.PRODUCT)) {
@@ -132,6 +128,15 @@ public class BillImpl implements Bill{
             }
         }
 
+        return bill;
+    }
+
+    private static Map<String, Object> getDefaultOrderRequest() {
+        Map<String, Object> bill = new HashMap<String, Object>();
+        bill.put(ADDITION_RATE, 0F);
+        bill.put(DELIVERY_FEE, 0F);
+        bill.put(DISCOUNT_COUPON, 0F);
+        bill.put(DISCOUNT_RATE, 0F);
         return bill;
     }
 }
