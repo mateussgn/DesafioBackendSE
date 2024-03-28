@@ -1,5 +1,7 @@
 package com.bill.splitter.api.calculator;
 
+import com.bill.splitter.api.BillingLink.BillingLink;
+import com.bill.splitter.api.BillingLink.PicPayBillingLink;
 import com.bill.splitter.api.order.item.OrderItem;
 import com.bill.splitter.api.order.item.OrderItemType;
 
@@ -61,13 +63,8 @@ public class BillImpl implements Bill{
     }
 
     private Map<String, String> clientsBillingLinks(Map<String, BigDecimal> clientsFinalBill) {
-        Map<String, String> clientsBillingLinks = new HashMap<>();
-
-        for (String key : clientsFinalBill.keySet()) {
-            clientsBillingLinks.put(key, BILLING_LINK + clientsFinalBill.get(key));
-        }
-
-        return clientsBillingLinks;
+        BillingLink billingLinks = new PicPayBillingLink();
+        return billingLinks.getBillingLinks(clientsFinalBill);
     }
 
     private Map<String, Float> individualPercentages (Map<String, Float> individualPartialBill, Float fullBill) {
