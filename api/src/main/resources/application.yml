@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: api
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/bill_splitter
+    username: root
+    password:
