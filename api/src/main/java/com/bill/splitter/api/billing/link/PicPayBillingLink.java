@@ -1,4 +1,4 @@
-package com.bill.splitter.api.BillingLink;
+package com.bill.splitter.api.billing.link;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

@@ -1,7 +1,7 @@
 package com.bill.splitter.api.calculator;
 
-import com.bill.splitter.api.BillingLink.BillingLink;
-import com.bill.splitter.api.BillingLink.PicPayBillingLink;
+import com.bill.splitter.api.billing.link.BillingLink;
+import com.bill.splitter.api.billing.link.PicPayBillingLink;
 import com.bill.splitter.api.order.item.OrderItem;
 import com.bill.splitter.api.order.item.OrderItemType;
 
