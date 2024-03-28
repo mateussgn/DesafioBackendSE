@@ -88,7 +88,9 @@ public class BillImpl implements Bill{
         for (OrderItem orderItem : orderItems) {
 
             OrderItemType orderItemType = orderItem.orderItemType();
-            
+
+            // TODO: Would be a good approach create an interface and then its implementations to avoid this if statements sequence.
+
             if (orderItemType.equals(OrderItemType.ADDITION_RATE)) {
                 if (orderItem.value() != null) {
                     bill.put(ADDITION_RATE, orderItem.value());
