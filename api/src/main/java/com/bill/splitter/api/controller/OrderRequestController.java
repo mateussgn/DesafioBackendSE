@@ -1,8 +1,8 @@
 package com.bill.splitter.api.controller;
 
-import com.bill.splitter.api.calculator.Bill;
-import com.bill.splitter.api.calculator.BillImpl;
-import com.bill.splitter.api.order.item.OrderItem;
+import com.bill.splitter.api.service.calculator.Bill;
+import com.bill.splitter.api.service.calculator.BillImpl;
+import com.bill.splitter.api.domain.order.item.dto.OrderItem;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

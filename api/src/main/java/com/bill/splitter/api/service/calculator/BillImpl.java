@@ -1,9 +1,9 @@
-package com.bill.splitter.api.calculator;
+package com.bill.splitter.api.service.calculator;
 
-import com.bill.splitter.api.billing.link.BillingLink;
-import com.bill.splitter.api.billing.link.PicPayBillingLink;
-import com.bill.splitter.api.order.item.OrderItem;
-import com.bill.splitter.api.order.item.OrderItemType;
+import com.bill.splitter.api.service.billing.link.BillingLink;
+import com.bill.splitter.api.service.billing.link.PicPayBillingLink;
+import com.bill.splitter.api.domain.order.item.dto.OrderItem;
+import com.bill.splitter.api.domain.order.item.OrderItemType;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.bill.splitter.api.calculator.BillConstants.*;
+import static com.bill.splitter.api.service.calculator.BillConstants.*;
 
 public class BillImpl implements Bill{
 

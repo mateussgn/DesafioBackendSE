@@ -1,6 +1,6 @@
-package com.bill.splitter.api.calculator;
+package com.bill.splitter.api.service.calculator;
 
-import com.bill.splitter.api.order.item.OrderItem;
+import com.bill.splitter.api.domain.order.item.dto.OrderItem;
 
 import java.util.List;
 import java.util.Map;

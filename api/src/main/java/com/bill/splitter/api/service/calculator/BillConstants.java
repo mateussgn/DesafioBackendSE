@@ -1,4 +1,4 @@
-package com.bill.splitter.api.calculator;
+package com.bill.splitter.api.service.calculator;
 
 public class BillConstants {
 

@@ -1,13 +1,13 @@
-package com.bill.splitter.api.calculator;
+package com.bill.splitter.api.service.calculator;
 
-import com.bill.splitter.api.order.item.OrderItem;
-import com.bill.splitter.api.order.item.OrderItemType;
+import com.bill.splitter.api.domain.order.item.dto.OrderItem;
+import com.bill.splitter.api.domain.order.item.OrderItemType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static com.bill.splitter.api.calculator.BillConstants.BILLING_LINK;
+import static com.bill.splitter.api.service.calculator.BillConstants.BILLING_LINK;
 
 class BillImplTest {
 

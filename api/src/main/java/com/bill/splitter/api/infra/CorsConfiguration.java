@@ -1,4 +1,4 @@
-package com.bill.splitter.api.configuration;
+package com.bill.splitter.api.infra;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
