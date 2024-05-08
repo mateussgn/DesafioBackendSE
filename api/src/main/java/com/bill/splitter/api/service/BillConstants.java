@@ -1,4 +1,4 @@
-package com.bill.splitter.api.service.calculator;
+package com.bill.splitter.api.service;
 
 public class BillConstants {
 
@@ -7,6 +7,6 @@ public class BillConstants {
     public static final String DELIVERY_FEE = "deliveryFee";
     public static final String DISCOUNT_COUPON = "discountCoupon";
     public static final String DISCOUNT_RATE = "discountRate";
-    public static final String BILLING_LINK = "https://picipay.me/mateussgn/";
+    public static final String BILLING_LINK = "https://picpay.me/mateussgn/";
 
 }

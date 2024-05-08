@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.bill.splitter.api.service.calculator.BillConstants.*;
+import static com.bill.splitter.api.service.BillConstants.*;
 
 public class BillImpl implements Bill{
 

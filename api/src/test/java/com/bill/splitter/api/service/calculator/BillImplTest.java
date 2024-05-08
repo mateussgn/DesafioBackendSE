@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static com.bill.splitter.api.service.calculator.BillConstants.BILLING_LINK;
+import static com.bill.splitter.api.service.BillConstants.BILLING_LINK;
 
 class BillImplTest {
 
