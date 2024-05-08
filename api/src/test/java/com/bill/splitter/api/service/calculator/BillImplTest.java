@@ -21,7 +21,7 @@ class BillImplTest {
                 new OrderItem(OrderItemType.PRODUCT, 20.37F, "Beta")
         ));
 
-        billingLinks = new HashMap<String, String>(){{
+        billingLinks = new HashMap<>(){{
             put("Alpha", BILLING_LINK + "23.49");
             put("Beta", BILLING_LINK + "33.12");
         }};
@@ -39,7 +39,7 @@ class BillImplTest {
                 new OrderItem(OrderItemType.PRODUCT, 20.37F, "Beta")
         ));
 
-        billingLinks = new HashMap<String, String>(){{
+        billingLinks = new HashMap<>(){{
             put("Alpha", BILLING_LINK + "22.24");
             put("Beta", BILLING_LINK + "31.37");
         }};
@@ -57,7 +57,7 @@ class BillImplTest {
                 new OrderItem(OrderItemType.PRODUCT, 20.37F, "Beta")
         ));
 
-        billingLinks = new HashMap<String, String>(){{
+        billingLinks = new HashMap<>(){{
             put("Alpha", BILLING_LINK + "21.27");
             put("Beta", BILLING_LINK + "29.98");
         }};
@@ -75,7 +75,7 @@ class BillImplTest {
                 new OrderItem(OrderItemType.PRODUCT, 20.37F, "Beta")
         ));
 
-        billingLinks = new HashMap<String, String>(){{
+        billingLinks = new HashMap<>(){{
             put("Alpha", BILLING_LINK + "20.17");
             put("Beta", BILLING_LINK + "28.44");
         }};
@@ -93,7 +93,7 @@ class BillImplTest {
                 new OrderItem(OrderItemType.PRODUCT, 20.37F, "Beta")
         ));
 
-        billingLinks = new HashMap<String, String>(){{
+        billingLinks = new HashMap<>(){{
             put("Alpha", BILLING_LINK + "25.56");
             put("Beta", BILLING_LINK + "36.05");
         }};
@@ -111,7 +111,7 @@ class BillImplTest {
                 new OrderItem(OrderItemType.PRODUCT, 20.37F, "Beta")
         ));
 
-        billingLinks = new HashMap<String, String>(){{
+        billingLinks = new HashMap<>(){{
             put("Alpha", BILLING_LINK + "25.71");
             put("Beta", BILLING_LINK + "36.26");
         }};

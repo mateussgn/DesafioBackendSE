@@ -6,7 +6,7 @@ public enum OrderItemType {
     DELIVERY_FEE,
     DISCOUNT_COUPON,
     DISCOUNT_RATE,
-    PRODUCT;
+    PRODUCT
 }
 
 

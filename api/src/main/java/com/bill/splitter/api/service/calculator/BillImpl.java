@@ -80,7 +80,7 @@ public class BillImpl implements Bill{
     private Map<String, Object> sectionOrderRequest (List<OrderItem> orderItems) {
         Map<String, Object> bill = getDefaultOrderRequest();
 
-        Map<String, Float> clientsBill = new HashMap<String, Float>();
+        Map<String, Float> clientsBill = new HashMap<>();
 
         for (OrderItem orderItem : orderItems) {
 
@@ -131,7 +131,7 @@ public class BillImpl implements Bill{
     }
 
     private static Map<String, Object> getDefaultOrderRequest() {
-        Map<String, Object> bill = new HashMap<String, Object>();
+        Map<String, Object> bill = new HashMap<>();
         bill.put(ADDITION_RATE, 0F);
         bill.put(DELIVERY_FEE, 0F);
         bill.put(DISCOUNT_COUPON, 0F);
